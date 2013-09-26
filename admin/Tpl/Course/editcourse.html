@@ -1,0 +1,35 @@
+<div class="page">
+	<div class="pageContent">
+	
+	<form method="post" action="__ACTION__/callbackType/closeCurrent/navTabId/course_course" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this, dialogAjaxDone)">
+		<div class="pageFormContent" layoutH="58">
+
+	      <div class="unit">
+		<label>课程名称：</label>
+		<input type="text" name="name" class="required" value="<!--{$result.name}--!>" />
+	      </div>
+	      <div class="unit">
+		<label>图片：</label>
+		<input type="file" name="pic" />
+	      </div>
+		<div class="unit">
+		<label>课件地址：</label>
+		<input type="text" name="file" value="<!--{$result.file}--!>" />
+	      </div>
+	      <div class="unit">
+		<label>课程说明：</label>
+		<textarea name="content"  rows="5" cols="57" ><!--{$result.content}--!></textarea>
+	</div>
+
+</div>
+<input type="hidden" name="id" value="<!--{$Think.get.id}--!>" />
+		<div class="formBar">
+		  <ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">提交</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	
+	</div>
+</div>
