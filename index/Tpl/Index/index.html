@@ -92,10 +92,9 @@
 	      <div class="clear"></div></div>
 	    <h3 class="ct-ti pd-tp">课程展示</h3>
 	    <div class="category"><ul class="list-none navnow">
-		<li id="navnow1_34"><a class="nav" title="保安培训" href="#"><span>保安培训</span></a></li>
-		<li id="navnow1_35"><a class="nav" title="在职民警培训" href="#"><span>在职民警培训</span></a></li>
-		<li id="navnow1_36"><a class="nav" title="全国政法委书记培训" href="#"><span>全国政法委书记培训</span></a></li
-		><li id="navnow1_56"><a class="nav" title="少数民族民警培训" href="#"><span>少数民族民警培训</span></a></li>
+		<volist name="result_course" id="rc" offset="0" length="3">
+		<li id="navnow1_34"><a class="nav" title="<!--{$rc.name}--!>" href="__ROOT__/member.php/index/courselist/id/<!--{$rc.id}--!>"><span><!--{$rc.name}--!></span></a></li>
+		</volist>
 		</ul><div class="clear"></div></div>
 	    <h3 class="ct-ti pd-tp">关于我们</h3>
 	    <div class="category">
@@ -129,40 +128,16 @@
       <div class="mri ri">
 	<div id="hnews" class="newlist br-bg">
 	  <h3 class="ti">
-	    <a class="more" title="课程动态" href="#">更多&gt;&gt;</a>
-	    课程动态
+	    <a class="more" title="课程更新" href="__ROOT__/member.php/index/courselist">更多&gt;&gt;</a>
+	    课程更新
 	  </h3>
 	  <div id="hnewsitems" class="newtxtlst">
 	    <ol class="list-none metlist">
-	      <li class="list top"><span class="time">2013-05-30</span><a target="_self" title="西藏在职民警培训班开课" href="#">西藏在职民警培训班开课</a></li>
-	      <li class="list "><span class="time">2013-05-29</span><a target="_self" title=" 全国政法委书记培训圆满结束" href="#">全国政法委书记培训圆满结束</a></li>
-	      <li class="list "><span class="time">2013-05-29</span><a target="_self" title="高级保安培训班火热报名中" href="#">高级保安培训班火热报名中</a></li>
-	      <li class="list "><span class="time">2013-05-29</span><a target="_self" title="高级保安培训班开班" href="#">高级保安培训班开班</a></li>
-	      <li class="list "><span class="time">2013-05-29</span><a target="_self" title=" 尼泊尔警察总部研修班圆满结业" href="#">尼泊尔警察总部研修班圆满结业</a></li>
-	      <li class="list "><span class="time">2013-05-29</span><a target="_self" title="越南高级执法官员研修班开班" href="#">越南高级执法官员研修班开班</a></li>
+		<volist name="result_courses" id="rcs">
+	      <li class="list top"><span class="time"><!--{$rcs.addtime|date="Y-m-d", ###}--!></span><a target="_self" title="<!--{$rcs.name}--!>" href="__ROOT__/member.php/index/course/id/<!--{$rcs.id}--!>"><!--{$rcs.name}--!></a></li>
+		</volist>
 	  </ol>
 	</div>
-	  <div class="textr" id="dians">
-
-
-	    <a class="dian active" num="0" href="javascript:;">&nbsp;</a>
-
-
-
-
-
-	    <a class="dian" num="2" href="javascript:;">&nbsp;</a>
-
-
-
-
-
-	    <a class="dian" num="4" href="javascript:;">&nbsp;</a>
-
-
-
-
-	  </div>
 	  <div class="clear"></div>			   
 	</div>
 	<div class="pro-list br-bg">

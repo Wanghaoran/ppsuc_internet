@@ -5,6 +5,9 @@ class IndexAction extends CommonAction {
     $News = M('News');
     $result_news = $News -> field('id,title,addtime') -> order('addtime DESC') -> limit(8) -> select();
     $this -> assign('result_news', $result_news);
+    $Course = M('Course');
+    $result_courses = $Course -> field('id,name,addtime') -> order('addtime DESC') -> limit(3) -> select();
+    $this -> assign('result_courses', $result_courses);
     $this -> display();
   }
 

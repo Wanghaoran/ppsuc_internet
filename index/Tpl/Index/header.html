@@ -1,7 +1,7 @@
     <header>
     <div class="inner">
       <div class="top-logo inner">
-	<a id="web_logo" title="中国人民公安大学网络学院" href="">
+	<a id="web_logo" title="中国人民公安大学网络学院" href="__ROOT__">
 	  <img style="margin:15px 0px 0px 0px;" title="中国人民公安大学网络学院" alt="中国人民公安大学网络学院" src="__PUBLIC__/index/image/logo.png">
 	</a>
 	<ul class="top-nav list-none">
@@ -15,7 +15,7 @@
     <nav>
     <div class="inner">
       <ul class="list-none">
-	<if condition="(MODULE_NAME eq Index) AND (ACTION_NAME eq index)">
+	<if condition="(APP_NAME eq index) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq index)">
 	<li style="width:122px;" id="nav_10001" class="navdown">
 	<else/>
 	<li style="width:122px;" id="nav_10001" class="">
@@ -48,48 +48,28 @@
 	<li style="width:122px;" id="nav_32">
 	<a class="hover-none nav" title="课程展示" href="#"><span>课程展示</span></a>
 	<dl class="myCorner" data-corner="bottom 9px" style="border-bottom-left-radius: 9px; border-bottom-right-radius: 9px;">
+	<volist name="result_course" id="rc">
 	  <dd>
-	  <a title="保安培训" href="#">保安培训</a>
+	  <a title="<!--{$rc.name}--!>" href="__ROOT__/member.php/index/courselist/id/<!--{$rc.id}--!>"><!--{$rc.name}--!></a>
 	  <p>
-	  <a title="保安上岗前培训" href="#">保安上岗前培训</a>
-	  <a title="高级保安培训" href="#">高级保安培训</a>
-	  <a title="保安进阶培训" href="#">保安进阶培训</a>
+	  <volist name="rc.course" id="rcc">
+	  <a title="<!--{$rcc.name}--!>" href="__ROOT__/member.php/index/course/id/<!--{$rcc.id}--!>"><!--{$rcc.name}--!></a>
+	  </volist>
 	  </p>
 	  </dd>
-	  <dd>
-	  <a title="在职民警培训" href="#">在职民警培训</a>
-	  <p>
-	  <a title="民警入职培训" href="#">民警入职培训</a>
-	  <a title="在职民警进督培训" href="#">在职民警进督培训</a>
-	  <a title="在职民警进监培训" href="#">在职民警进监培训</a>
-	  </p>
-	  </dd>
-	  <dd>
-	  <a title="全国政法委书记培训" href="#">全国政法委书记培训</a>
-	  <p>
-	  <a title="全国政法委书记培训一期" href="#">全国政法委书记培训纪实</a>
-	  <a title="全国政法委书记培训课程介绍" href="#">全国政法委书记培训课程介绍</a>
-	  <a title="全国政法委书记培训成果" href="#">全国政法委书记培训成果</a>
-	  <a title="全国政法委书记培训四期" href="#">全国政法委书记培训二期</a>
-	  </p>
-	  </dd>
-	  <dd>
-	  <a title="少数民族民警培训" href="#">少数民族民警培训</a>
-	  <p>
-	  <a title="西藏在职民警培训班" href="#">西藏在职民警培训班</a>
-	  <a title="宁夏在职民警培训班" href="#">宁夏在职民警培训班</a>
-	  <a title="BPL新疆在职民警培训班" href="#">新疆在职民警培训班</a>
-	  </p>
-	  </dd>
+	</volist>
 	</dl>
 	</li>
 	<li class="line"></li>
+	<if condition="(APP_NAME eq member) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq index)">
+	<li style="width:122px;" class="navdown" id="nav_33">
+	<else/>
 	<li style="width:122px;" id="nav_33">
-	<a class="hover-none nav" title="学员中心" 0="" href="#"><span>学员中心</span></a>
+	</if>
+	<a class="hover-none nav" title="学员中心" 0="" href="__ROOT__/member.php"><span>学员中心</span></a>
 	<dl class="myCorner" data-corner="bottom 9px" style="border-bottom-left-radius: 9px; border-bottom-right-radius: 9px;">
-	  <dd><a title="课程服务 " href="#">课程服务</a></dd>
-	  <dd><a title="授课方式" href="#">授课方式</a></dd>
-	  <dd><a title="学员留言" href="#">学员留言</a></dd>
+	  <dd><a title="学员注册 " href="__ROOT__/member.php/Public/register">学员注册</a></dd>
+	  <dd><a title="课程服务 " href="__ROOT__/member.php/index/courseshow">课程服务</a></dd>
     	</dl>
 	</li>
 	<li class="line"></li>

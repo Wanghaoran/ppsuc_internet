@@ -1,6 +1,13 @@
 <?php
 class CommonAction extends Action {
   public function _initialize(){
+    $url_list = '';
+    foreach($_GET['_URL_'] as $value){
+	$url_list .= ',' . $value;
+    }
+    if(!$_SESSION[C('USER_AUTH_KEY')]){      
+      $this->error(L('NOT_LOGIN'), __APP__ . '/' . C('USER_AUTH_GATEWAY') . '/url_jump/' . $url_list);
+    }
     //关于我们
     $Aboutus = M('Aboutus');
     $result_aboutus = $Aboutus -> field('id,title') -> select();
