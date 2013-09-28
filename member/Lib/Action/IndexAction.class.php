@@ -9,16 +9,36 @@ class IndexAction extends CommonAction {
   }
 
   public function courseshow(){
-    dump($_GET);
+    $Course = M('Course');
+    import("ORG.Util.Page");// 导入分页类
+    $count = $Course -> count('id');
+    $page = new Page($count, 9);
+    $show = $page -> show();
+    $result = $Course -> field('id,name,pic') -> limit($page -> firstRow . ',' . $page -> listRows) -> order('addtime DESC') -> select();
+    $this -> assign('result', $result);
+    $this -> assign('show', $show);
+    $this -> display();
   }
 
   public function courselist(){
-    dump($_GET);
-    echo '课程列表';
+    $CourseCategory = M('CourseCategory');
+    $info = $CourseCategory -> field('id,name,remark') -> find($this -> _get('id', 'intval'));
+    $this -> assign('info', $info);
+    $Course = M('Course');
+    import("ORG.Util.Page");// 导入分页类
+    $count = $Course -> where(array('cid' => $this -> _get('id', 'intval'))) -> count('id');
+    $page = new Page($count, 5);
+    $show = $page -> show();
+    $result = $Course -> field('id,name,content,addtime') -> where(array('cid' => $this -> _get('id', 'intval'))) -> limit($page -> firstRow . ',' . $page -> listRows) -> order('addtime DESC') -> select();
+    $this -> assign('result', $result);
+    $this -> assign('show', $show);
+    $this -> display();
   }
 
   public function course(){
-    dump($_GET);
-    echo '课程详情';
+    $Course = M('Course');
+    $result = $Course -> field('id,cid,name,pic,file,addtime,content') -> find($this -> _get('id', 'intval'));
+    $this -> assign('result', $result);
+    $this -> display();
   }
 }

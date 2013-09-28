@@ -46,7 +46,7 @@
 	</li>
 	<li class="line"></li>
 	<li style="width:122px;" id="nav_32">
-	<a class="hover-none nav" title="课程展示" href="#"><span>课程展示</span></a>
+	<a class="hover-none nav" title="课程展示" href="__ROOT__/member.php/index/courseshow"><span>课程展示</span></a>
 	<dl class="myCorner" data-corner="bottom 9px" style="border-bottom-left-radius: 9px; border-bottom-right-radius: 9px;">
 	<volist name="result_course" id="rc">
 	  <dd>
@@ -61,7 +61,7 @@
 	</dl>
 	</li>
 	<li class="line"></li>
-	<if condition="(APP_NAME eq member) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq index)">
+	<if condition="((APP_NAME eq member) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq index)) OR ((APP_NAME eq member) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq courseshow)) OR ((APP_NAME eq member) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq courselist)) OR ((APP_NAME eq member) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq course))">
 	<li style="width:122px;" class="navdown" id="nav_33">
 	<else/>
 	<li style="width:122px;" id="nav_33">
@@ -73,10 +73,25 @@
     	</dl>
 	</li>
 	<li class="line"></li>
-	<li style="width:122px;" id="nav_44"><a class="hover-none nav" title="教学网络" href="#"><span>教学网络</span></a></li>
+	<if condition="(APP_NAME eq index) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq map)">
+	<li style="width:122px;" class="navdown" id="nav_44">
+	<else/>
+	<li style="width:122px;" id="nav_44">
+	</if>
+		<a class="hover-none nav" title="教学网络" href="__ROOT__/index/map"><span>教学网络</span></a></li>
 	<li class="line"></li>
-	<li style="width:122px;" id="nav_40"><a class="hover-none nav" title="硬件资源" href="#"><span>硬件资源</span></a></li><li class="line"></li>
-	<li style="width:122px;" id="nav_41"><a class="hover-none nav" title="联系我们" href="#"><span>联系我们</span></a></li>
+	<if condition="((APP_NAME eq index) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq image)) OR ((APP_NAME eq index) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq imageinfo))">
+	<li style="width:122px;" class="navdown" id="nav_40">
+	<else/>
+	<li style="width:122px;" id="nav_40">
+	</if>
+	<a class="hover-none nav" title="校园美景" href="__ROOT__/index/image"><span>校园美景</span></a></li><li class="line"></li>
+	<if condition="(APP_NAME eq index) AND (MODULE_NAME eq Index) AND (ACTION_NAME eq contactuss)">
+	<li style="width:122px;" class="navdown" id="nav_41">
+	<else/>
+	<li style="width:122px;" id="nav_41">
+	</if>
+	<a class="hover-none nav" title="联系我们" href="__ROOT__/index/contactuss"><span>联系我们</span></a></li>
     </ul>
   </div>
   </nav>

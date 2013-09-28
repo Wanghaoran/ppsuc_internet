@@ -80,12 +80,8 @@
 	      <script language="JavaScript">
 	      </script>
 	      <ul>
-		<form action="product/product.php" name="product_myformsearch" method="get">
-		  <input type="hidden" value="search" name="search">
-		  <input type="hidden" value="cn" name="lang">
-		  <input type="hidden" value="32" name="class1">
-		  <input type="hidden" value="0" name="searchtype">
-		  <li><span class="parasearch_title">内容</span><span class="parasearch_input"><input type="text" name="content" value="请输入关键词" onblur="if(this.value == '') this.value = '请输入关键词';"></span></li>
+		<form action="__URL__/sourcesearch" method="post">
+		  <li><span class="parasearch_title">内容</span><span class="parasearch_input"><input type="text" name="title" value="请输入关键词" onblur="if(this.value == '') this.value = '请输入关键词';"></span></li>
 		  <li><span class="parasearch_search"><input type="submit" class="searchgo" value="搜索"></span></li>
 		</form>
 	      </ul>
@@ -149,22 +145,14 @@
 	  <div class="pro-ccc">
 	    <div data-listnum="2" id="indexcar" class="profld" style="height: 145px;">
 	      <ol class="list-none metlist" style="height: 145px; left: -540px;">
+		<volist name="result_image" id="ri">
 		<li class="list" style="height: 145px; margin: 0px 15px; position: relative;">
-		<a class="img" target="_self" title="校园景色1" href="#"><img width="150" height="120" title="校园景色1" alt="校园景色1" src="__PUBLIC__/index/image/look1.jpg"></a>
-		<h3 style="width:150px;"><a target="_self" title="校园景色1" href="#">校园景色1</a></h3>
+		<a class="img" target="_self" title="<!--{$ri.title}--!>" href="__ROOT__/index/imageinfo/id/<!--{$ri.id}--!>"><img width="150" height="120" title="<!--{$ri.title}--!>" alt="<!--{$ri.title}--!>" src="__UPLOAD__/<!--{$ri.image}--!>"></a>
+		<h3 style="width:150px;"><a target="_self" title="<!--{$ri.title}--!>" href="__ROOT__/index/imageinfo/id/<!--{$ri.id}--!>"><!--{$ri.title}--!></a></h3>
 		</li>
-		<li class="list" style="height: 145px; margin: 0px 15px; position: relative;">
-		<a class="img" target="_self" title="校园景色2" href="#"><img width="150" height="120" title="校园景色2" alt="校园景色2" src="__PUBLIC__/index/image/look2.jpg"></a>
-		<h3 style="width:150px;"><a target="_self" title="校园景色2" href="#">校园景色2</a></h3>
-		</li>
-		<li class="list" style="height: 145px; margin: 0px 15px; position: relative;">
-		<a class="img" target="_self" title="校园景色3" href="#"><img width="150" height="120" title="校园景色3" alt="校园景色3" src="__PUBLIC__/index/image/look3.jpg"></a>
-		<h3 style="width:150px;"><a target="_self" title="校园景色3" href="#">校园景色3</a></h3>
-		</li>
-		<li class="list" style="height: 145px; margin: 0px 15px; position: relative;">
-		<a class="img" target="_self" title="校园景色4" href="#"><img width="150" height="120" title="校园景色4" alt="校园景色4" src="__PUBLIC__/index/image/look4.jpg"></a>
-		<h3 style="width:150px;"><a target="_self" title="校园景色4" href="#">校园景色4</a></h3>
-		</li>
+		</volist>
+	
+		
 	      </ol>
 	    </div>
 	    <div class="clear"></div>
@@ -178,11 +166,10 @@
       <h3 class="lkti">友情链接&nbsp;:</h3>
       <div class="lk-contx" style="width: 895px;">
 	<div class="txtlk"><ul class="list-none">
-	    <li><a title="" target="_blank" href="#">中国人民公安大学</a></li>
-	    <li><a title="" target="_blank" href="#">中华人民共和国公安部</a></li>
-	    <li><a title="" target="_blank" href="#">中华人民共和国教育部</a></li>
-	    <li><a title="" target="_blank" href="#">首都社会安全研究基地</a></li>
-	    <li><a title="" target="_blank" href="#">司法鉴定中心</a></li>
+	    <li><a title="" target="_blank" href="http://www.cppsu.edu.cn">中国人民公安大学</a></li>
+	    <li><a title="" target="_blank" href="http://www.mps.gov.cn">中华人民共和国公安部</a></li>
+	    <li><a title="" target="_blank" href="http://www.moe.gov.cn">中华人民共和国教育部</a></li>
+	    <li><a title="" target="_blank" href="http://www.bjpopss.gov.cn">首都社会安全研究基地</a></li>
 	  </ul>
 	  <div class="clear"></div></div>
 	<div class="imglk"><ul class="list-none">

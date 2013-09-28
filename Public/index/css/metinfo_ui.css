@@ -90,7 +90,7 @@ td.submint{ padding:10px;}
 #showimg .editor{ line-height:2; padding:0px 10px; font-size:14px;}
 .imgparalist li{ padding:3px 15px 3px; background:url(../images/dt-0.gif) no-repeat 5px center;}
 .imgparalist li span{ float:left; margin-right:10px; color:#999;}
-#showimg .ctitle{ margin:10px 0px 10px; padding:5px 20px; background:url(../images/dt-7.gif) no-repeat left center; *background-position:left 17px; font-size:14px; border-bottom:1px dotted #ccc; }
+#showimg .ctitle{ margin:10px 0px 10px; padding:5px 20px; background:url(../image/dt-7.gif) no-repeat left center; *background-position:left 17px; font-size:14px; border-bottom:1px dotted #ccc; }
 /*招聘模块*/
 #joblist{ padding:15px;}
 #joblist dl{ padding:0px 5px 15px; margin-bottom:15px;}

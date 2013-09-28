@@ -8,6 +8,9 @@ class IndexAction extends CommonAction {
     $Course = M('Course');
     $result_courses = $Course -> field('id,name,addtime') -> order('addtime DESC') -> limit(3) -> select();
     $this -> assign('result_courses', $result_courses);
+    $SchoolImage = M('SchoolImage');
+    $result_image = $SchoolImage -> field('id,title,image') -> order('addtime DESC') -> limit(6) -> select();
+    $this -> assign('result_image', $result_image);
     $this -> display();
   }
 
@@ -36,6 +39,47 @@ class IndexAction extends CommonAction {
   public function news(){
     $News = M('News');
     $result = $News -> field('title,content,addtime') -> find($this -> _get('id', 'intval'));
+    $this -> assign('result', $result);
+    $this -> display();
+  }
+
+  //教学网络
+  public function map(){
+    $this -> display();
+  }
+
+  //校园美景
+  public function image(){
+    $SchoolImage = M('SchoolImage');
+    import("ORG.Util.Page");// 导入分页类
+    $count = $SchoolImage -> count('id');
+    $page = new Page($count, 9);
+    $show = $page -> show();
+    $result = $SchoolImage -> field('id,title,image') -> limit($page -> firstRow . ',' . $page -> listRows) -> order('addtime DESC') -> select();
+    $this -> assign('result', $result);
+    $this -> assign('show', $show);
+    $this -> display();
+  }
+
+  //美景详情
+  public function imageinfo(){
+    $SchoolImage = M('SchoolImage');
+    $result = $SchoolImage -> field('id,title,image,content,addtime') -> find($this -> _get('id', 'intval'));
+    $this -> assign('result', $result);
+    $this -> display();
+  }
+
+  //联系我们
+  public function contactuss(){
+    $this -> display();
+  }
+
+  //课程搜索
+  public function sourcesearch(){
+    $CourseCategory = M('CourseCategory');
+    $where = array();
+    $where['name'] = array('LIKE', '%' . $this -> _post('title') . '%');
+    $result = $CourseCategory -> field('id,name,addtime,remark') -> where($where) -> order('addtime DESC') -> select();
     $this -> assign('result', $result);
     $this -> display();
   }
