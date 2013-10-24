@@ -3,7 +3,7 @@ class IndexAction extends CommonAction {
 
   public function index(){
     $News = M('News');
-    $result_news = $News -> field('id,title,addtime') -> order('addtime DESC') -> limit(8) -> select();
+    $result_news = $News -> field('id,title,addtime') -> order('addtime DESC') -> limit(10) -> select();
     $this -> assign('result_news', $result_news);
     $Course = M('Course');
     $result_courses = $Course -> field('id,name,addtime') -> order('addtime DESC') -> limit(3) -> select();

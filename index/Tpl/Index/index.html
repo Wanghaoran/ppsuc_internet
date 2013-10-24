@@ -70,6 +70,77 @@
     </div>
 
 
+
+    <div class="index inner ptp">
+      <div class="mlf lf" style="width:989px;">
+
+
+	<div class="mri ri" style="float:left;width:320px;margin-right:12px;">
+	<div id="hnews" class="newlist br-bg">
+	  <h3 class="ti">
+	    <a class="more" title="新闻动态" href="__ROOT__/index/newslist">更多&gt;&gt;</a>
+	    新闻动态
+	  </h3>
+	  <div id="hnewsitems" class="newtxtlst" style="height:235px;">
+	    <ol class="list-none metlist">
+		<volist name="result_news" id="rn">
+	      <li class="list top"><span class="time"><!--{$rn.addtime|date="Y-m-d", ###}--!></span><a target="_self" title="<!--{$rn.title}--!>" href="__ROOT__/index/news/id/<!--{$rn.id}--!>"><!--{$rn.title}--!></a></li>
+		</volist>
+	  </ol>
+	  </div>
+	  <div class="clear"></div>			   
+	</div>
+      </div>
+
+<div class="mri ri" style="float:left;width:320px;;margin-right:12px;">
+	<div id="hnews" class="newlist br-bg">
+	  <h3 class="ti">
+	    <a class="more" title="培训班" href="__ROOT__/member.php/index/courseshow">更多&gt;&gt;</a>
+	    培训班
+	  </h3>
+	  <div id="hnewsitems" class="newtxtlst" style="height:235px;">
+	    <ol class="list-none metlist">
+		<volist name="result_course" id="rc">
+	      <li class="list top"><span class="time"><!--{$rn.addtime|date="Y-m-d", ###}--!></span><a target="_self" title="<!--{$rcc.name}--!>" href="__ROOT__/member.php/index/courselist/id/<!--{$rc.id}--!>">法律文秘培训<!--{$i}--!>班</a></li>
+		</volist>
+	  </ol>
+	  </div>
+	  <div class="clear"></div>			   
+	</div>
+      </div>
+
+
+<div class="mri ri" style="float:left;width:320px;">
+	<div id="hnews" class="newlist br-bg">
+	  <h3 class="ti">
+	    学员登陆
+	  </h3>
+	  <div id="hnewsitems" class="newtxtlst" style="height:223px;">
+		
+	   
+
+	  <form action="__ROOT__/member.php/public/checklogin" method="post" style="margin-top:20px;">
+	<div style="margin:20px;"><b style="font-size:15px;">邮箱：</b><input type="text" name="email" class="parasearch_inputs" /></div>
+	<div style="margin:20px;"><b style="font-size:15px;">密码：</b><input type="password" name="password" class="parasearch_inputs" /></div>
+	<div style="margin:40px;"><input type="submit" class="searchgos" value="登陆" /><input style="margin-left:10px;" type="button" class="searchgos" value="注册新学员" onclick="location.href='__URL__/register'" /></div>
+	<input type="hidden" name="url_jump" value="<!--{$Think.get.url_jump}--!>" />
+	</form>
+	   
+	
+	  </div>
+	  <div class="clear"></div>			   
+	</div>
+      </div>
+
+      <div class="clear"></div>
+
+      </div>
+       <div class="clear"></div>
+
+
+
+
+
     <div class="index inner ptp">
       <div class="mlf lf br-bg">
 	<div class="src-ico"></div>
@@ -103,18 +174,18 @@
 	  </div>		  
 	  <div class="news ri p-d">
 	    <h3 class="ti">
-	      <a class="more" title="新闻动态" href="__ROOT__/index/newslist">更多&gt;&gt;</a>
-	      新闻动态
+	      <a class="more" title="教学计划" href="__ROOT__/member.php/index/courseshow">更多&gt;&gt;</a>
+	      教学计划
 	    </h3>
 	    <div class="txtlist">
 	      <ol class="list-none metlist">
-		<volist name="result_news" id="rn">
+		<volist name="result_course" id="rc">
 		<eq name="i" value="1">
 		<li class="list top">
 		<else/>
 		<li class="list">
 		</eq>
-		<span class="time"><!--{$rn.addtime|date="Y-m-d", ###}--!></span><a target="_self" title="<!--{$rn.title}--!>" href="__ROOT__/index/news/id/<!--{$rn.id}--!>"><!--{$rn.title}--!></a></li>
+		<span class="time"><!--{$rc.addtime|date="Y-m-d", ###}--!></span><a target="_self" title="<!--{$rc.name}--!>" href="__ROOT__/member.php/index/courselist/id/<!--{$rc.id}--!>"><!--{$rc.name}--!></a></li>
 		</volist>
 	    </ol></div>
 	  </div>
