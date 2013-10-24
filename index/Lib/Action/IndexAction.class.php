@@ -11,6 +11,12 @@ class IndexAction extends CommonAction {
     $SchoolImage = M('SchoolImage');
     $result_image = $SchoolImage -> field('id,title,image') -> order('addtime DESC') -> limit(6) -> select();
     $this -> assign('result_image', $result_image);
+    $Student = M('Student');
+    $result_student = $Student -> field('id,title') -> select();
+    $this -> assign('result_student', $result_student);
+    $School = M('School');
+    $result_school = $School -> field('id,title') -> select();
+    $this -> assign('result_school', $result_school);
     $this -> display();
   }
 
@@ -21,6 +27,24 @@ class IndexAction extends CommonAction {
     $this -> assign('result', $result);
     $this -> display();
   }
+
+  //招生专栏
+  public function student(){
+    $Student = M('Student');
+    $result = $Student -> field('title,content') -> find($this -> _get('id', 'intval'));
+    $this -> assign('result', $result);
+    $this -> display();
+  }
+
+  //新生入学
+  public function school(){
+    $School = M('School');
+    $result = $School -> field('title,content') -> find($this -> _get('id', 'intval'));
+    $this -> assign('result', $result);
+    $this -> display();
+  }
+
+
 
   //新闻动态 - 列表页
   public function newslist(){

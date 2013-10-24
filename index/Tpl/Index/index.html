@@ -142,10 +142,10 @@
 
 
     <div class="index inner ptp">
-      <div class="mlf lf br-bg">
+      <div class="mlf lf br-bg" style="width:650px;">
 	<div class="src-ico"></div>
 	<div class="pd-w">
-	  <div class="pronav-srh lf p-d">
+	  <div class="pronav-srh lf p-d" style="width:282px;">
 	    <h3 class="srhtit">课程搜索<span>Product Search</span></h3>
 	    <div data-valuez="请输入关键词" class="metsearch">
 	      <script language="JavaScript">
@@ -172,62 +172,38 @@
 	    </ul><div class="clear"></div></div>
 	    <div class="pd-tp"></div>
 	  </div>		  
-	  <div class="news ri p-d">
+	  <div class="news ri p-d" style="width:285px;">
 	    <h3 class="ti">
-	      <a class="more" title="教学计划" href="__ROOT__/member.php/index/courseshow">更多&gt;&gt;</a>
-	      教学计划
+	      新生入学
 	    </h3>
 	    <div class="txtlist">
 	      <ol class="list-none metlist">
-		<volist name="result_course" id="rc">
+		<volist name="result_school" id="rs">
 		<eq name="i" value="1">
 		<li class="list top">
 		<else/>
 		<li class="list">
 		</eq>
-		<span class="time"><!--{$rc.addtime|date="Y-m-d", ###}--!></span><a target="_self" title="<!--{$rc.name}--!>" href="__ROOT__/member.php/index/courselist/id/<!--{$rc.id}--!>"><!--{$rc.name}--!></a></li>
+		<span class="time">-点击查看-</span><a target="_self" title="<!--{$rs.title}--!>" href="__ROOT__/index/school/id/<!--{$rs.id}--!>"><!--{$rs.title}--!></a></li>
 		</volist>
 	    </ol></div>
 	  </div>
 	  <div class="clear"></div>
 	</div>
       </div>
-      <div class="mri ri">
-	<div id="hnews" class="newlist br-bg">
+      <div class="mri ri" style="width:327px;">
+	<div id="hnews" class="newlist br-bg" style="width:300px;float:right">
 	  <h3 class="ti">
-	    <a class="more" title="课程更新" href="__ROOT__/member.php/index/courselist">更多&gt;&gt;</a>
-	    课程更新
+	    招生专栏
 	  </h3>
-	  <div id="hnewsitems" class="newtxtlst">
+	  <div id="hnewsitems" class="newtxtlst" style="height:223px;">
 	    <ol class="list-none metlist">
-		<volist name="result_courses" id="rcs">
-	      <li class="list top"><span class="time"><!--{$rcs.addtime|date="Y-m-d", ###}--!></span><a target="_self" title="<!--{$rcs.name}--!>" href="__ROOT__/member.php/index/course/id/<!--{$rcs.id}--!>"><!--{$rcs.name}--!></a></li>
+		<volist name="result_student" id="rs">
+	      <li class="list top"><span class="time">-点击查看-</span><a target="_self" title="<!--{$rcs.name}--!>" href="__ROOT__/index/school/id/<!--{$rs.id}--!>"><!--{$rs.title}--!></a></li>
 		</volist>
 	  </ol>
 	</div>
 	  <div class="clear"></div>			   
-	</div>
-	<div class="pro-list br-bg">
-	  <div class="flip">
-	    <p id="trigger"><a href="javascript:void(0);" target="_self" class="">1</a><a href="javascript:void(0);" target="_self" class="">2</a><a href="javascript:void(0);" target="_self" class="">3</a><a href="javascript:void(0);" target="_self" class="current">4</a><a href="javascript:void(0);" target="_self">5</a></p>
-	    <a href="javascript:void(0);" id="car_prev" class="prev"></a>
-	    <a href="javascript:void(0);" id="car_next" class="next"></a>
-	  </div>
-	  <div class="pro-ccc">
-	    <div data-listnum="2" id="indexcar" class="profld" style="height: 145px;">
-	      <ol class="list-none metlist" style="height: 145px; left: -540px;">
-		<volist name="result_image" id="ri">
-		<li class="list" style="height: 145px; margin: 0px 15px; position: relative;">
-		<a class="img" target="_self" title="<!--{$ri.title}--!>" href="__ROOT__/index/imageinfo/id/<!--{$ri.id}--!>"><img width="150" height="120" title="<!--{$ri.title}--!>" alt="<!--{$ri.title}--!>" src="__UPLOAD__/<!--{$ri.image}--!>"></a>
-		<h3 style="width:150px;"><a target="_self" title="<!--{$ri.title}--!>" href="__ROOT__/index/imageinfo/id/<!--{$ri.id}--!>"><!--{$ri.title}--!></a></h3>
-		</li>
-		</volist>
-	
-		
-	      </ol>
-	    </div>
-	    <div class="clear"></div>
-	  </div>
 	</div>
       </div>
       <div class="clear"></div>
