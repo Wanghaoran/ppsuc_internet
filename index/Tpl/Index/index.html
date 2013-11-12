@@ -224,46 +224,37 @@
 		</volist>
 	    </ul><div class="clear"></div></div>
 	    <div class="pd-tp"></div>
-	  </div>		  
-	  <div class="news ri p-d" style="width:130px;float:left;margin-left:30px;">
-	    <h3 class="ti">
-	      学习入口
-	    </h3>
-	    <div class="txtlist">
-	      <ol class="list-none metlist">
-
-		<li class="list top">
-		<a target="_self" title="" href="">学习资料下载</a></li>
-		<li class="list top">
-		<a target="_self" title="" href="">课程查询</a></li>
-		<li class="list top">
-		<a target="_self" title="" href="">在线考试系统</a></li>
-		<li class="list top">
-		<a target="_self" title="" href="">成绩查询</a></li>
-		</ol>
-		</div>
 	  </div>
+	  <div class="news ri p-d" style="float:left;margin-left:30px;">
 
-		<div class="news ri p-d" style="width:130px;margin-left:10px;">
-	    <h3 class="ti">
-	      教学教务
-	    </h3>
-	    <div class="txtlist">
-	      <ol class="list-none metlist">
-		<li class="list top">
-		<a target="_self" title="" href="">教学公告</a></li>
-		<li class="list top">
-		<a target="_self" title="" href="">教学日历</a></li>
-		<li class="list top">
-		<a target="_self" title="" href="">选课指南</a></li>
-		<li class="list top">
-		<a target="_self" title="" href="">精品课程</a></li>
-		<li class="list top">
-		<a target="_self" title="" href="">统考专区</a></li>
-		<li class="list top">
-		<a target="_self" title="" href="">学位英语</a></li>
-	  </ol>
-		</div>
+
+	    <div id="statetab2" class="tabbox" style="height:100%;">
+			<ul style="padding:0;" class="tabbtn">
+				<li style="padding:0;background:url('/ppsuc_internet/Public/index/image/tabbg.gif') repeat-x scroll 0 0 rgba(0, 0, 0, 0);height:100%;" class=""><a href="">学习入口</a></li>
+				<li style="padding:0;background:url('/ppsuc_internet/Public/index/image/tabbg.gif') repeat-x scroll 0 0 rgba(0, 0, 0, 0);height:100%;" class="current"><a href="">教学教务</a></li>
+			</ul><!--tabbtn end-->
+			<div class="tabcon" style="display: none;">
+                <ul style="padding:0;">
+
+                    <li><a title="学习资料下载" href="">学习资料下载</a></li>
+                    <li><a title="课程查询" href="">课程查询</a></li>
+                    <li><a title="在线考试系统" href="">在线考试系统</a></li>
+                    <li><a title="成绩查询" href="">成绩查询</a></li>
+                </ul>
+            </div><!--tabcon end-->
+			<div class="tabcon" style="display: block;">
+                <ul style="padding:0;">
+                    <li><a title="教学公告" href="">教学公告</a></li>
+                    <li><a title="教学日历" href="">教学日历</a></li>
+                    <li><a title="选课指南" href="">选课指南</a></li>
+                    <li><a title="精品课程" href="">精品课程</a></li>
+                    <li><a title="统考专区" href="">统考专区</a></li>
+                    <li><a title="学位英语" href="">学位英语</a></li>
+
+                </ul>
+            </div><!--tabcon end-->
+        </div>
+
 	  </div>
 
 
@@ -344,6 +335,34 @@ $(function(){
 		$_con.eq($_index).show();
 	}
 	
+});
+
+//tab plugins 插件
+$(function(){
+
+    //选项卡鼠标滑过事件
+    $('#statetab2 .tabbtn li').mouseover(function(){
+        TabSelect("#statetab2 .tabbtn li", "#statetab2 .tabcon", "current", $(this))
+    });
+    $('#statetab2 .tabbtn li').eq(0).trigger("mouseover");
+
+    //选项卡鼠标滑过事件
+    $('#clicktab .tabbtn li').click(function(){
+        TabSelect("#clicktab .tabbtn li", "#clicktab .tabcon", "current", $(this))
+    });
+    $('#clicktab .tabbtn li').eq(0).trigger("click");
+
+    function TabSelect(tab,con,addClass,obj){
+        var $_self = obj;
+        var $_nav = $(tab);
+        $_nav.removeClass(addClass),
+                $_self.addClass(addClass);
+        var $_index = $_nav.index($_self);
+        var $_con = $(con);
+        $_con.hide(),
+                $_con.eq($_index).show();
+    }
+
 });
 </script>
 
