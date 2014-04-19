@@ -13,5 +13,6 @@ class CommonAction extends Action {
       $result_course[$key]['course'] = $Course -> field('id,name') -> where(array('cid' => $value['id'])) -> order('addtime DESC') -> limit(4) -> select();
     }
     $this -> assign('result_course', $result_course);
+
   }
 }
