@@ -69,6 +69,10 @@ class CourseAction extends CommonAction {
       if(!$CourseCategory -> create()){
 	$this -> error($CourseCategory -> getError());
       }
+        if($_FILES['pic']['size'] != 0){
+            $info = R('Public/upload');
+            $_POST['pic'] = $info[0]['savename'];
+        }
       if($CourseCategory -> save()){
 	$this -> success(L('DATA_UPDATE_SUCCESS'));
       }else{
