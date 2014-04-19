@@ -32,6 +32,10 @@ class CourseAction extends CommonAction {
   //增加课程类别管理
   public function addcategory(){
     if(!empty($_POST['name'])){
+        if($_FILES['pic']['size'] != 0){
+            $info = R('Public/upload');
+        }
+        $_POST['pic'] = $info[0]['savename'];
       $CourseCategory = M('CourseCategory');
       if(!$CourseCategory -> create()){
 	$this -> error($CourseCategory -> getError());
@@ -108,10 +112,6 @@ class CourseAction extends CommonAction {
   //增加课程
   public function addcourse(){
     if(!empty($_POST['name'])){
-      if($_FILES['pic']['size'] != 0){
-	$info = R('Public/upload');
-      }
-      $_POST['pic'] = $info[0]['savename'];
       $_POST['addtime'] = time();
       $Course = M('Course');
       if(!$Course -> create()){
@@ -147,10 +147,6 @@ class CourseAction extends CommonAction {
     if(!empty($_POST['name'])){
       if(!$Course -> create()){
 	$this -> error($Course -> getError());
-      }
-      if(!empty($_FILES['pic']['name'])){
-	$info = R('Public/upload');
-	$Course -> pic = $info[0]['savename'];
       }
       if($Course -> save()){
 	$this -> success(L('DATA_UPDATE_SUCCESS'));

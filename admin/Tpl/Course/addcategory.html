@@ -1,13 +1,17 @@
 <div class="page">
 	<div class="pageContent">
 	
-	<form method="post" action="__ACTION__/callbackType/closeCurrent/navTabId/course_category" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)">
+	<form method="post" action="__ACTION__/callbackType/closeCurrent/navTabId/course_category" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this, dialogAjaxDone)">
 		<div class="pageFormContent" layoutH="58">
 
 	      <div class="unit">
 		<label>课程分类名称：</label>
 		<input type="text" name="name" class="required" />
 	      </div>
+            <div class="unit">
+                <label>图片：</label>
+                <input type="file" name="pic" />
+            </div>
 	      <div class="unit">
 		<label>售价：</label>
 		<input type="text" name="price" class="required" />

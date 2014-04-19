@@ -20,12 +20,22 @@
     <div class="sb_box br-bg" style="width:990px;text-align:center;">
       <h1 style="font-size:30px;margin-top:60px;">新学员注册</h1>
       <form action="__URL__/checkregister" method="post" style="margin-top:20px;">
-	<div style="margin:20px;"><b style="font-size:15px;">邮箱：</b><input type="text" name="email" class="parasearch_inputs" /></div>
+          <h1>基本信息</h1>
+	<div style="margin:20px;"><b style="font-size:15px;">登录邮箱：</b><input type="text" name="email" class="parasearch_inputs" /></div>
 	<div style="margin:20px;"><b style="font-size:15px;">密码：</b><input type="password" name="password" class="parasearch_inputs" /></div>
 	<div style="margin:20px;"><b style="font-size:15px;">重复密码：</b><input type="password" name="repassword" class="parasearch_inputs" /></div>
 	<div style="margin:20px;"><b style="font-size:15px;">姓名：</b><input type="text" name="name" class="parasearch_inputs" /></div>
 	<div style="margin:20px;"><b style="font-size:15px;">电话：</b><input type="text" name="telphone" class="parasearch_inputs" /></div>
-	<div style="margin:40px;"><input type="submit" class="searchgos" value="注册" /><input style="margin-left:50px;" type="button" class="searchgos" value="返回前页" onclick="history.go(-1);" /></div>
+          <div style="margin:20px;"><b style="font-size:15px;">身份证号：</b><input type="text" name="number" class="parasearch_inputs" style="width: 300px;" /></div>
+          <hr/>
+          <h1>详细信息</h1>
+          <div style="margin:20px;"><b style="font-size:15px;">性别：</b><select name="sex"><option value="男">男</option><option value="女">女</option></select></div>
+          <div style="margin:20px;"><b style="font-size:15px;">工作单位：</b><input type="text" name="unit" class="parasearch_inputs" style="width: 300px;" /></div>
+          <div style="margin:20px;"><b style="font-size:15px;">职位：</b><input type="text" name="position" class="parasearch_inputs" /></div>
+          <div style="margin:20px;"><b style="font-size:15px;">家庭住址：</b><input type="text" name="home" class="parasearch_inputs" style="width: 300px;" /></div>
+          <div style="margin:20px;"><b style="font-size:15px;">是否订阅课程邮件：</b><input type="radio" name="subscription" value="1" checked="checked" /> 订阅 <input type="radio" name="subscription" value="2" /> 不订阅</div>
+
+          <div style="margin:40px;"><input type="submit" class="searchgos" value="注册" /><input style="margin-left:50px;" type="button" class="searchgos" value="返回前页" onclick="history.go(-1);" /></div>
 	</form>
     </div>
     <div class="clear"></div>

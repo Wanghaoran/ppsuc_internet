@@ -9,15 +9,15 @@ class IndexAction extends CommonAction {
   }
 
   public function courseshow(){
-    $Course = M('Course');
-    import("ORG.Util.Page");// 导入分页类
-    $count = $Course -> count('id');
-    $page = new Page($count, 9);
-    $show = $page -> show();
-    $result = $Course -> field('id,name,pic') -> limit($page -> firstRow . ',' . $page -> listRows) -> order('addtime DESC') -> select();
-    $this -> assign('result', $result);
-    $this -> assign('show', $show);
-    $this -> display();
+      $CourseCategory = M('CourseCategory');
+      import("ORG.Util.Page");// 导入分页类
+      $count = $CourseCategory -> count('id');
+      $page = new Page($count, 5);
+      $show = $page -> show();
+      $result = $CourseCategory -> order('id DESC') -> select();
+      $this -> assign('result', $result);
+      $this -> assign('show', $show);
+      $this -> display();
   }
 
   public function courselist(){
@@ -34,6 +34,33 @@ class IndexAction extends CommonAction {
     $this -> assign('show', $show);
     $this -> display();
   }
+
+    public function mycourselist(){
+        $CourseCategory = M('CourseCategory');
+        $info = $CourseCategory -> field('id,name,remark') -> find($this -> _get('id', 'intval'));
+        $this -> assign('info', $info);
+        $Course = M('Course');
+        import("ORG.Util.Page");// 导入分页类
+        $count = $Course -> where(array('cid' => $this -> _get('id', 'intval'))) -> count('id');
+        $page = new Page($count, 5);
+        $show = $page -> show();
+        $result = $Course -> field('id,name,content,addtime') -> where(array('cid' => $this -> _get('id', 'intval'))) -> limit($page -> firstRow . ',' . $page -> listRows) -> order('addtime DESC') -> select();
+        $this -> assign('result', $result);
+        $this -> assign('show', $show);
+        $this -> display();
+    }
+
+    public function coursecategory(){
+        $CourseCategory = M('CourseCategory');
+        import("ORG.Util.Page");// 导入分页类
+        $count = $CourseCategory -> count('id');
+        $page = new Page($count, 5);
+        $show = $page -> show();
+        $result = $CourseCategory -> order('id DESC') -> select();
+        $this -> assign('result', $result);
+        $this -> assign('show', $show);
+        $this -> display();
+    }
 
   public function course(){
     $Course = M('Course');

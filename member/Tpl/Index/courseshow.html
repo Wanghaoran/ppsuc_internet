@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>课程展示 - 中国人民公安大学网络学院</title>
+<title>我的课程 - 中国人民公安大学网络学院</title>
     <meta content="中国人民公安大学网络学院" name="description" />
     <meta content="中国人民公安大学网络学院" name="keywords" />
 <link data-module="10001" id="metuimodule" href="__PUBLIC__/index/css/metinfo_ui.css" type="text/css" rel="stylesheet" />
@@ -24,29 +24,19 @@
 <div class="sidebar inner">
     <div class="sb_nav">
 
-            <div class="ti1-bg"><span>关于我们</span></div>
+            <div class="ti1-bg"><span>学员中心</span></div>
 			<h3 class="title1"></h3>
 			<div data-jsok="2" data-class3="0" data-csnow="37" id="sidebar" class="active">
-			  <dl class="list-none navnow">
-			    <dt id="part2_37">
-			    <a class="zm" title="首页" href="__ROOT__/member.php"><span>首页</span></a></dt>
-			</dl>
-			<dl class="list-none navnow">
-			    <dt id="part2_37">
-			    <a class="zm" title="课程服务" href="__APP__/index/courseshow"><span>课程服务</span></a></dt>
-			</dl>
-			<dl class="list-none navnow">
-			    <dt id="part2_37">
-			    <a class="zm" title="退出登录" href="__APP__/Public/logout"><span>退出登录</span></a></dt>
-			</dl>
-			<div class="clear"></div>
+                <include file="Index:list" />
+
+                <div class="clear"></div>
 		      </div>
 		<include file="./index/Tpl/Index/contactus.html" />
     </div>
     <div class="sb_box br-bg">
 	    <h3 class="title">
-			<div class="position">当前位置：<a title="首页" href="__ROOT__">首页</a> &gt; <a href="#">课程服务</a></div>
-			<span>课程服务</span>
+			<div class="position">当前位置：<a title="首页" href="__ROOT__">首页</a> &gt; <a href="#">我的课程</a></div>
+			<span>我的课程</span>
 		</h3>
 		<div class="clear"></div>
 
@@ -54,8 +44,8 @@
 <ul class="list-none metlist">
 <volist name="result" id="r">
 <li style="width: 223px; margin-left: 10px; margin-right: 10px; height: 165px;" class="list">
-<a class="img" target="_self" title="<!--{$r.name}--!>" href="__ROOT__/member.php/index/course/id/<!--{$r.id}--!>"><img width="221" height="130" title="<!--{$r.name}--!>" alt="<!--{$r.name}--!>" src="__UPLOAD__/<!--{$r.pic}--!>"></a>
-<h3><a target="_self" title="<!--{$r.name}--!>" href="__ROOT__/member.php/index/course/id/<!--{$r.id}--!>"><!--{$r.name}--!></a></h3>
+<a class="img" target="_self" title="<!--{$r.name}--!>" href="__ROOT__/member.php/index/mycourselist/id/<!--{$r.id}--!>"><img width="221" height="130" title="<!--{$r.name}--!>" alt="<!--{$r.name}--!>" src="__UPLOAD__/<!--{$r.pic}--!>"></a>
+<h3><a target="_self" title="<!--{$r.name}--!>" href="__ROOT__/member.php/index/mycourselist/id/<!--{$r.id}--!>"><!--{$r.name}--!></a></h3>
 </li>
 </volist>
 </ul>

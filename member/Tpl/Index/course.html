@@ -27,34 +27,21 @@
             <div class="ti1-bg"><span>关于我们</span></div>
 			<h3 class="title1"></h3>
 			<div data-jsok="2" data-class3="0" data-csnow="37" id="sidebar" class="active">
-			  <dl class="list-none navnow">
-			    <dt id="part2_37">
-			    <a class="zm" title="首页" href="__ROOT__/member.php"><span>首页</span></a></dt>
-			</dl>
-			<dl class="list-none navnow">
-			    <dt id="part2_37">
-			    <a class="zm" title="课程服务" href="__APP__/index/courseshow"><span>课程服务</span></a></dt>
-			</dl>
-			<dl class="list-none navnow">
-			    <dt id="part2_37">
-			    <a class="zm" title="退出登录" href="__APP__/Public/logout"><span>退出登录</span></a></dt>
-			</dl>
-			<div class="clear"></div>
+                <include file="Index:list" />
+
+                <div class="clear"></div>
 		      </div>
 		<include file="./index/Tpl/Index/contactus.html" />
     </div>
     <div class="sb_box br-bg">
 	    <h3 class="title">
-	      <div class="position">当前位置：<a title="首页" href="__ROOT__">首页</a> &gt; <a href="__ROOT__/member.php/index/courselist/id/<!--{$result.cid}--!>">课程列表</a> &gt; <a href="">课程详情</a></div>
-			<span>课程详情</span>
+	      <div class="position">当前位置：<a title="首页" href="__ROOT__">首页</a> &gt; <a href="__ROOT__/member.php/index/mycourselist/id/<!--{$result.cid}--!>">我的课程列表</a> &gt; <a href="">在线上课</a></div>
+			<span>在线上课</span>
 		</h3>
 		<div class="clear"></div>
 <div id="shownews" class="active">
 <h1 class="title"><!--{$result.name}--!></h1>
         <div class="editor">
-	<div style="float:left;">
-	<img src="__UPLOAD__/<!--{$result.pic}--!>" />
-	</div>
 	<div style="float:left; margin-left:80px;">
 	<!--{$result.content|nl2br}--!>
 	</div>
